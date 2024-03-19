@@ -1,0 +1,81 @@
+.main {
+    min-width: 600px;
+    max-width: 1200px;
+    padding: 100px;
+    font-size: 26px;
+
+    margin: auto;
+
+    color: var(--color-white);
+    width: 100%;
+}
+
+.main > div {
+    display: flex;
+    flex-direction: row;
+
+    background: rgba(224, 255, 255, 0.1);
+    padding: 16px 20px;
+
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+    /*box-shadow: 0 3px 10px rgb(255 255 255 / 0.2);*/
+
+    cursor: pointer;
+}
+
+.main > div.title {
+    background: transparent;
+    justify-content: right;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.main > div:hover {
+    background: rgba(224, 255, 255, 0.2);
+}
+
+.main > div.title:hover {
+    background: transparent;
+}
+
+.main > div.block {
+    flex-direction: column;
+}
+
+.value {
+    color: var(--color-white-bright);
+    margin-left: auto;
+    padding-left: 10px;
+}
+
+.text {
+    margin-top: 4px;
+    font-weight: 200;
+    line-height: 160%;
+}
+
+.main > div.copyright {
+    margin-top: 100px;
+    text-align: center;
+    justify-content: center;
+    background: transparent;
+
+    font-size: 16px;
+    font-weight: 200;
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        padding: 20px 0;
+        font-size: 16px;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .main > div {
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,6 @@
+.env
+#dist
+.git
+art
+ideas
+/android/app/google-services.json

@@ -1,0 +1,43 @@
+:root {
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    /*color: #35a8d8;*/
+    /*color: rgba(20, 137, 181, 0.76);*/
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    outline: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+@supports (-webkit-touch-callout: none) {
+    body {
+        /*--app-height: 100dvh;*/
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+img {
+    -webkit-user-drag: none;
+}

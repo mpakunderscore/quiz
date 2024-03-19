@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "target": "es2021",
+        "moduleResolution": "node",
+        "jsx": "react-jsx",
+        "sourceMap": true,
+        "outDir": "dist",
+        "allowSyntheticDefaultImports": true
+    },
+    "lib": ["es2021"]
+}

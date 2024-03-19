@@ -1,0 +1,40 @@
+:root {
+    --font-minimal: 6px;
+    --font-small: 12px;
+    --font-normal: 16px;
+    --font-normal-plus: 22px;
+    --font-larger: 30px;
+    --font-big: 38px;
+    --font-giant: 56px;
+
+    --font-180: 180px;
+}
+
+:root {
+    --font: 'Roboto', sans-serif;
+}
+
+/*@font-face {*/
+/*    font-family: 'Titillium Web';*/
+/*    src: url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;600&display=swap');*/
+/*    font-display: optional;*/
+/*}*/
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../fonts/Roboto/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../fonts/Roboto/Roboto-Thin.ttf');
+    font-weight: 200;
+}
+
+/*@font-face {*/
+/*    font-family: 'Titillium Web';*/
+/*    src: url('../../fonts/Titillium/TitilliumWeb-SemiBold.ttf');*/
+/*    font-weight: 600;*/
+/*    font-display: swap;*/
+/*}*/
