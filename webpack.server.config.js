@@ -11,7 +11,7 @@ const nodeExternals = require('webpack-node-externals'); // You might need to in
 const serverConfig = () => {
 
     // const mode = process.env.NODE_ENV || 'production' // development
-    const mode = 'development'
+    const mode = 'production'
 
     return {
         target: 'node', // Ensures compatibility with Node.js
@@ -48,10 +48,10 @@ const serverConfig = () => {
                 "crypto": false,
             }
         },
-        // externals: {
-        //     sqlite3: 'commonjs sqlite3',
-        // },
-        externals: [nodeExternals()], // This will treat node_modules as external
+        externals: {
+            sqlite3: 'commonjs sqlite3',
+        },
+        // externals: [nodeExternals()], // This will treat node_modules as external
     }
 }
 
