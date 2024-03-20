@@ -10,32 +10,32 @@
     width: 100%;
 }
 
-.main > div {
-    display: flex;
-    flex-direction: row;
+/*.main > div {*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
 
-    background: rgba(224, 255, 255, 0.1);
-    padding: 16px 20px;
+/*    background: rgba(224, 255, 255, 0.1);*/
+/*    padding: 16px 20px;*/
 
-    border-radius: 5px;
+/*    border-radius: 5px;*/
 
-    margin-bottom: 20px;
-    /*box-shadow: 0 3px 10px rgb(255 255 255 / 0.2);*/
+/*    margin-bottom: 20px;*/
+/*    !*box-shadow: 0 3px 10px rgb(255 255 255 / 0.2);*!*/
 
-    cursor: pointer;
-}
+/*    cursor: pointer;*/
+/*}*/
 
-.main > div.title {
-    background: transparent;
-    justify-content: right;
-    color: white;
-    font-size: 20px;
-    font-weight: 200;
-}
+/*.main > div.title {*/
+/*    background: transparent;*/
+/*    justify-content: right;*/
+/*    color: white;*/
+/*    font-size: 20px;*/
+/*    font-weight: 200;*/
+/*}*/
 
-.main > div:hover {
-    background: rgba(224, 255, 255, 0.2);
-}
+/*.main > div:hover {*/
+/*    background: rgba(224, 255, 255, 0.2);*/
+/*}*/
 
 .main > div.title:hover {
     background: transparent;

@@ -122,104 +122,93 @@ const Admin: FC<{}> = ({}) => {
 
     const difficulty = 'HARD'
 
+    const hostData = [
+        {
+            title: 'NAME',
+            value: 'Super Business Raccoon'
+        },
+        {
+            title: 'ADDRESS',
+            value: 'Street 1, Northern California, USA'
+        },
+        {
+            title: 'PHONE',
+            value: '+1 555 555 5555'
+        },{
+            title: 'GAMES LIBRARY',
+            value: ''
+        },
+        {
+            title: 'GAMES PLAYED',
+            value: ''
+        },
+        {
+            title: 'PLAYERS',
+            value: ''
+        },
+        {
+            title: 'ADMINS',
+            value: ''
+        },
+        {
+            title: 'MAC',
+            value: ''
+        },
+        {
+            title: 'IP',
+            value: ''
+        },
+        {
+            title: 'STATUS',
+            value: ''
+        },
+        {
+            title: 'VERSION',
+            value: ''
+        }
+    ]
+
     return (
         <div className={'main'}>
 
-            <div className={'title'}>ADMIN</div>
-
-            <div>
-                <div>NAME</div>
-                <div className={'value'}>{hostName}</div>
-            </div>
-
-            <div className={'title'}>GAMES</div>
-
-            <div>
-                <div>Main quiz</div>
-                <div className={'value'}>{''}</div>
-            </div>
-
-            <div>
-                <div>TV quiz</div>
-                <div className={'value'}>{''}</div>
-            </div>
-
-            <div className={'title'}>HOSTS</div>
-
-            <div>
-                <div>Host 1</div>
-                <div className={'value'}>{'ONLINE / 0.1.1'}</div>
-            </div>
-
-            <div>
-                <div>Host 2</div>
-                <div className={'value'}>{'OFFLINE 3 days / 0.1.0'}</div>
-            </div>
-
-            <Block block={{title: 'HOST DATA'}} values={[
+            <Block block={{title: 'ADMIN'}} values={[
                 {
                     title: 'NAME',
-                    value: 'Super Business Raccoon'
-                },
+                    value: hostName
+                }
+            ]}/>
+
+            <Block block={{title: 'GAMES'}} values={[
                 {
-                    title: 'ADDRESS',
-                    value: 'Street 1, Northern California, USA'
-                },
-                {
-                    title: 'PHONE',
-                    value: '+1 555 555 5555'
-                },{
-                    title: 'GAMES LIBRARY',
+                    title: 'Main quiz',
                     value: ''
                 },
                 {
-                    title: 'GAMES PLAYED',
+                    title: '2nd quiz',
                     value: ''
+                }
+            ]}/>
+
+            <Block block={{title: 'HOSTS'}} values={[
+                {
+                    title: 'Host 1',
+                    value: 'ONLINE / 0.1.1'
                 },
                 {
-                    title: 'PLAYERS',
-                    value: ''
-                },
-                {
-                    title: 'ADMINS',
-                    value: ''
-                },
-                {
-                    title: 'MAC',
-                    value: ''
-                },
-                {
-                    title: 'IP',
-                    value: ''
-                },
-                {
-                    title: 'STATUS',
-                    value: ''
-                },
+                    title: 'Host 2',
+                    value: 'OFFLINE 3 days / 0.1.0'
+                }
+            ]}/>
+
+            <Block block={{title: 'HOST DATA'}} values={hostData}/>
+
+            <Block block={{title: 'SETTINGS'}} values={[
                 {
                     title: 'VERSION',
-                    value: ''
+                    value: version
                 }
 
             ]}/>
-
-            <div className={'title'}>HOST UPDATE</div>
-
-            <div>
-                <div>VERSION</div>
-                <div className={'value'}>{version}</div>
-            </div>
-
-            <div className={'title'}>SETTINGS</div>
-
-            <div>
-                <div>STATUS</div>
-                <div className={'value'}>{status}</div>
-            </div>
-            <div>
-                <div>VERSION</div>
-                <div className={'value'}>{version}</div>
-            </div>
 
             <div className={'copyright'}>QUIZ CORPORATION</div>
         </div>)

@@ -59,7 +59,7 @@ const clientConfig = () => {
         .execSync('git rev-parse --short HEAD')
         .toString()
         .trim()
-        .toUpperCase() || '0'
+        .toUpperCase()
 
 
     // console.log(mode.toUpperCase())

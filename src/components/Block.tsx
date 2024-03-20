@@ -15,8 +15,8 @@ const Block = (props) => {
 
             <div className={'title'}>{props.block.title}</div>
 
-            {props.values.map(value =>
-                <div>
+            {props.values.map((value, i) =>
+                <div key={i}>
                     <div>{value.title}</div>
                     <div className={'value'}>{value.value}</div>
                 </div>
