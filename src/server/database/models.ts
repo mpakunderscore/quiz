@@ -30,6 +30,6 @@ let initModels = (sequelize) => {
 
 }
 
-module.exports = {
+export {
     USER, TOKEN, initModels
 }

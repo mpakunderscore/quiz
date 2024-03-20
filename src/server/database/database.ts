@@ -1,5 +1,5 @@
 let {Op, Sequelize} = require("sequelize");
-let {initModels, USER, TOKEN} = require("./models");
+let {initModels, USER, TOKEN} = require("./models.ts");
 
 // console.log(process.env.DATABASE_URL)
 

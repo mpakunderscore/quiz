@@ -1,4 +1,6 @@
-// const {initDatabase} = require("./server/database/database.ts");
+const {Op, Sequelize} = require("sequelize");
+
+const {initDatabase} = require("./server/database/database.ts");
 const {initAPI} = require("./server/api.ts");
 
 const { Server } = require('socket.io')
@@ -22,7 +24,7 @@ server.listen(port)
 
 require('dotenv').config()
 
-// initDatabase()
+initDatabase()
 initAPI(app)
 
 app.use('/', express.static('./dist'))
