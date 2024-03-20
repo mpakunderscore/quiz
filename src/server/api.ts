@@ -15,6 +15,17 @@ const initAPI = (app) => {
             })
     })
 
+    app.post(prefix + '/status', async (request, response) => {
+
+        const data = request.body;
+        console.log(data);
+
+        response.json(
+            {
+                status: true,
+            })
+    })
+
     let routes = [];
     app._router.stack.forEach(function (r) {
         if (r.route && r.route.path) {
@@ -25,6 +36,8 @@ const initAPI = (app) => {
     app.get(prefix, function (request, response) {
         response.json(routes);
     })
+
+    console.log('API INIT')
 }
 
 export {initAPI}

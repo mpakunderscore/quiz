@@ -2,6 +2,7 @@ const {Op, Sequelize} = require("sequelize");
 
 const {initDatabase} = require("./server/database/database.ts");
 const {initAPI} = require("./server/api.ts");
+const {initStatus} = require("./server/status.ts");
 
 const { Server } = require('socket.io')
 
@@ -26,6 +27,7 @@ require('dotenv').config()
 
 initDatabase()
 initAPI(app)
+initStatus()
 
 app.use('/', express.static('./dist'))
 

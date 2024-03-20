@@ -65,7 +65,7 @@ const clientConfig = () => {
         entry: {
             app: path.resolve(SOURCE_FOLDER, 'index.tsx'),
             // '../serviceWorker': path.resolve(SOURCE_FOLDER, 'serviceWorker.ts'),
-            // server: path.resolve(SOURCE_FOLDER, 'server.ts'),
+            // server: path.resolve(SOURCE_FOLDER, 'status.ts'),
         },
         output: {
             filename: 'js/[name].js',
