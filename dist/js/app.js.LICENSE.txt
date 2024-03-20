@@ -1,3 +1,5 @@
+/*! !!../../../node_modules/css-loader/dist/cjs.js!./block.css */
+
 /*! !!../../../node_modules/css-loader/dist/cjs.js!./colors.css */
 
 /*! !!../../../node_modules/css-loader/dist/cjs.js!./fonts.css */
@@ -46,9 +48,13 @@
 
 /*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */
 
+/*! ../css/components/block.css */
+
 /*! ../css/components/main.css */
 
 /*! ./App */
+
+/*! ./Block */
 
 /*! ./cjs/react-dom.development.js */
 
@@ -103,6 +109,10 @@
   \**********************************/
 
 /*!**********************************!*\
+  !*** ./src/components/Block.tsx ***!
+  \**********************************/
+
+/*!**********************************!*\
   !*** ./src/css/main/general.css ***!
   \**********************************/
 
@@ -113,6 +123,10 @@
 /*!*************************************!*\
   !*** ./src/css/components/main.css ***!
   \*************************************/
+
+/*!**************************************!*\
+  !*** ./src/css/components/block.css ***!
+  \**************************************/
 
 /*!*****************************************!*\
   !*** ./node_modules/react-dom/index.js ***!
@@ -201,6 +215,10 @@
 /*!***************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/css/components/main.css ***!
   \***************************************************************************/
+
+/*!****************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/css/components/block.css ***!
+  \****************************************************************************/
 
 /*!****************************************************************************!*\
   !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!

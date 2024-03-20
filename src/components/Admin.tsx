@@ -3,10 +3,11 @@ declare let VERSION: string;
 declare let GIT: string;
 
 import '../css/components/main.css'
+import Block from "./Block";
 // import '../css/desktop/block.css'
 // import '../css/desktop/media.css'
 
-const Main: FC<{}> = ({}) => {
+const Admin: FC<{}> = ({}) => {
 
 
     const [fontLoaded, setFontLoaded] = useState(false)
@@ -155,66 +156,52 @@ const Main: FC<{}> = ({}) => {
                 <div className={'value'}>{'OFFLINE 3 days / 0.1.0'}</div>
             </div>
 
-            <div className={'title'}>HOST DATA</div>
+            <Block block={{title: 'HOST DATA'}} values={[
+                {
+                    title: 'NAME',
+                    value: 'Super Business Raccoon'
+                },
+                {
+                    title: 'ADDRESS',
+                    value: 'Street 1, Northern California, USA'
+                },
+                {
+                    title: 'PHONE',
+                    value: '+1 555 555 5555'
+                },{
+                    title: 'GAMES LIBRARY',
+                    value: ''
+                },
+                {
+                    title: 'GAMES PLAYED',
+                    value: ''
+                },
+                {
+                    title: 'PLAYERS',
+                    value: ''
+                },
+                {
+                    title: 'ADMINS',
+                    value: ''
+                },
+                {
+                    title: 'MAC',
+                    value: ''
+                },
+                {
+                    title: 'IP',
+                    value: ''
+                },
+                {
+                    title: 'STATUS',
+                    value: ''
+                },
+                {
+                    title: 'VERSION',
+                    value: ''
+                }
 
-            <div>
-                <div>NAME</div>
-                <div className={'value'}>{'Super Business Raccoon'}</div>
-            </div>
-
-            <div>
-                <div>ADDRESS</div>
-                <div className={'value'}>{'Street 1, Northern California, USA'}</div>
-            </div>
-
-            <div>
-                <div>PHONE</div>
-                <div className={'value'}>{'+1 555 555 5555'}</div>
-            </div>
-
-            <div>
-                <div>GAMES LIBRARY</div>
-                <div className={'value'}>{3}</div>
-            </div>
-
-            <div>
-                <div>GAMES PLAYED</div>
-                <div className={'value'}>{gameCount}</div>
-            </div>
-
-            <div>
-                <div>PLAYERS</div>
-                <div className={'value'}>{playersCount}</div>
-            </div>
-            <div>
-                <div>ADMINS</div>
-                <div className={'value'}>{4}</div>
-            </div>
-
-            <div>
-                <div>MAC</div>
-                <div className={'value'}>{}</div>
-            </div>
-            <div>
-                <div>IP6</div>
-                <div className={'value'}>{}</div>
-            </div>
-            <div>
-                <div>IP</div>
-                <div className={'value'}>{}</div>
-            </div>
-            <div>
-                <div>INNER IP</div>
-                <div className={'value'}>{}</div>
-            </div>
-            <div>
-                <div>STATUS</div>
-                <div className={'value'}>{status}</div>
-            </div>
-            <div>
-                <div>VERSION</div>
-                <div className={'value'}>{version}</div>
-            </div>
+            ]}/>
 
             <div className={'title'}>HOST UPDATE</div>
 
@@ -238,4 +225,4 @@ const Main: FC<{}> = ({}) => {
         </div>)
 }
 
-export default Main;
+export default Admin;
