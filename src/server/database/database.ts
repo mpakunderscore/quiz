@@ -29,7 +29,7 @@ const initDatabase = () => {
         console.log(e);
     }
 
-    console.log(sequelize)
+    // console.log(sequelize)
 
     // Auth
     try {
