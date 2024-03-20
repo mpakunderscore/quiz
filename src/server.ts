@@ -1,5 +1,5 @@
-const {initDatabase} = require("./server/database/database.js");
-const {initAPI} = require("./server/api.js");
+// const {initDatabase} = require("./server/database/database.ts");
+const {initAPI} = require("./server/api.ts");
 
 const { Server } = require('socket.io')
 
@@ -22,8 +22,8 @@ server.listen(port)
 
 require('dotenv').config()
 
-initDatabase()
-initAPI()
+// initDatabase()
+initAPI(app)
 
 app.use('/', express.static('./dist'))
 

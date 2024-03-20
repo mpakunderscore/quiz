@@ -77,16 +77,6 @@ const getTokens = async (limit = '1000', order = 'createdAt') => {
 }
 
 const setToken = async (aiToken) => {
-
-    const imageSrc = await generateImage(aiToken.prompt)
-
-    let token = await TOKEN.create({
-        title: aiToken.title,
-        text: aiToken.text,
-        prompt: aiToken.prompt,
-        related: aiToken.related,
-        image: imageSrc
-    })
 }
 
 // const updatePoints = async (clientUser) => {
@@ -108,6 +98,6 @@ const updateUser = async (clientUser) => {
 
 
 
-module.exports = {
+export {
     initDatabase, getUser, getUsers, getToken, getTokens, setToken
 }

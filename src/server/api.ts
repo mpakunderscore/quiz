@@ -20,11 +20,11 @@ const initAPI = (app) => {
         if (r.route && r.route.path) {
             routes.push(r.route.path)
         }
-    });
+    })
 
     app.get(prefix, function (request, response) {
         response.json(routes);
-    });
+    })
 }
 
-module.exports = {initAPI}
+export {initAPI}
