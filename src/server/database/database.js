@@ -1,7 +1,5 @@
 let {Op, Sequelize} = require("sequelize");
 let {initModels, USER, TOKEN} = require("./models");
-const {generateImage} = require("../midjorney");
-
 
 // console.log(process.env.DATABASE_URL)
 
