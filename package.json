@@ -5,7 +5,6 @@
     "main": "server.ts",
     "scripts": {
         "start": "node dist/server.js",
-        "start-src": "node src/server.ts",
         "watch": "webpack --watch --config webpack.config.js",
         "watch-server": "webpack --watch --config webpack.server.config.js",
         "build": "NODE_ENV=production webpack --stats-error-details",
@@ -35,7 +34,8 @@
         "typescript": "^5.0.4",
         "utf-8-validate": "^5.0.10",
         "webpack-bundle-analyzer": "^4.10.1",
-        "webpack-cli": "^5.1.4"
+        "webpack-cli": "^5.1.4",
+        "webpack-node-externals": "^3.0.0"
     },
     "dependencies": {
         "dotenv": "^16.3.1",
@@ -46,7 +46,8 @@
         "react-dom": "^18.2.0",
         "sequelize": "^6.37.1",
         "socket.io": "^4.7.1",
-        "socket.io-client": "^4.7.1"
+        "socket.io-client": "^4.7.1",
+        "sqlite3": "^5.1.7"
     },
     "eslintConfig": {
         "extends": "react-app"

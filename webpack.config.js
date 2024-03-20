@@ -5,11 +5,12 @@ const webpack = new require('webpack')
 const PACKAGE = require("./package.json");
 const {execSync} = require("child_process");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const nodeExternals = require('webpack-node-externals'); // You might need to install this package
 
 const clientConfig = () => {
 
-    // const mode = process.env.NODE_ENV || 'production'
-    const mode = 'development'
+    // const mode = process.env.NODE_ENV || 'production' // development
+    const mode = 'production'
     console.log(mode)
     const SOURCE_FOLDER = path.resolve(__dirname, 'src')
     const DIST_FOLDER = path.resolve(__dirname, 'dist')

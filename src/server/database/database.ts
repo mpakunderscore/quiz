@@ -1,5 +1,7 @@
 let {Op, Sequelize} = require("sequelize");
+// require("sqlite3");
 let {initModels, USER, TOKEN} = require("./models.ts");
+
 
 // console.log(process.env.DATABASE_URL)
 
@@ -14,22 +16,20 @@ let sequelize
 
 const initDatabase = () => {
 
-    // Init
+    // SQLite database file path
+    const dbPath = './database.sqlite';
+
     try {
-        sequelize = new Sequelize(process.env.DATABASE_URL, {
-            dialect: 'postgres',
-            protocol: 'postgres',
-            dialectOptions: {
-                ssl: {
-                    require: true,
-                    rejectUnauthorized: false
-                }
-            },
+        sequelize = new Sequelize({
+            dialect: 'sqlite',
+            storage: dbPath, // Path to database file
             logging: false,
-        })
+        });
     } catch (e) {
-        console.log(e)
+        console.log(e);
     }
+
+    console.log(sequelize)
 
     // Auth
     try {

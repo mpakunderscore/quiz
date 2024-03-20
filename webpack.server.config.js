@@ -5,8 +5,14 @@ const webpack = new require('webpack')
 const PACKAGE = require("./package.json");
 const {execSync} = require("child_process");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const nodeExternals = require('webpack-node-externals'); // You might need to install this package
+
 
 const serverConfig = () => {
+
+    // const mode = process.env.NODE_ENV || 'production' // development
+    const mode = 'development'
+
     return {
         target: 'node', // Ensures compatibility with Node.js
         entry: './src/server.ts', // Your server file
@@ -14,7 +20,7 @@ const serverConfig = () => {
             path: path.resolve(__dirname, 'dist'), // Output directory
             filename: 'server.js' // Output file name
         },
-        mode: 'development', // 'development' for debugging
+        mode: mode,
         module: {
             rules: [
                 {
@@ -41,7 +47,11 @@ const serverConfig = () => {
                 "stream": false,
                 "crypto": false,
             }
-        }
+        },
+        // externals: {
+        //     sqlite3: 'commonjs sqlite3',
+        // },
+        externals: [nodeExternals()], // This will treat node_modules as external
     }
 }
 
