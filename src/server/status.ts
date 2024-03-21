@@ -21,9 +21,9 @@ const initStatus = async () => {
 
     const getLogin = async () => {
         const uuidObject = await getUUID()
-        console.log(uuidObject)
+        // console.log(uuidObject)
         let uuid = uuidObject ? uuidObject.dataValues.value : false
-        console.log(uuid)
+        // console.log(uuid)
         if (!uuid) {
             uuid = (await newUUID()).dataValues.value
         }

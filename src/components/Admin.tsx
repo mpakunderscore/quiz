@@ -168,6 +168,20 @@ const Admin: FC<{}> = ({}) => {
         }
     ]
 
+    const getHosts = async () => {
+        const response = await fetch("/api/hosts");
+        const hosts = await response.json();
+        setHosts(hosts)
+        console.log(hosts)
+    }
+
+    const [hosts, setHosts] = useState([])
+    const [host, setHost] = useState(false)
+
+    useEffect(() => {
+        getHosts()
+    }, []);
+
     return (
         <div className={'main'}>
 
@@ -189,26 +203,11 @@ const Admin: FC<{}> = ({}) => {
                 }
             ]}/>
 
-            <Block block={{title: 'HOSTS'}} values={[
-                {
-                    title: 'Host 1',
-                    value: 'ONLINE / 0.1.1'
-                },
-                {
-                    title: 'Host 2',
-                    value: 'OFFLINE 3 days / 0.1.0'
-                }
-            ]}/>
+            <Block block={{title: 'HOSTS'}} values={hosts}/>
 
-            <Block block={{title: 'HOST DATA'}} values={hostData}/>
+            {host ? <Block block={{title: 'HOST DATA'}} values={hostData}/> : null}
 
-            <Block block={{title: 'SETTINGS'}} values={[
-                {
-                    title: 'VERSION',
-                    value: version
-                }
-
-            ]}/>
+            <Block block={{title: 'SETTINGS'}} values={[{title: 'VERSION', value: version}]}/>
 
             <div className={'copyright'}>QUIZ CORPORATION</div>
         </div>)

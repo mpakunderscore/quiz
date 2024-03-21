@@ -10,6 +10,8 @@ const Block = (props) => {
 
     // const values = []
 
+    // console.log(props.values)
+
     return (
         <div className={'block'}>
 
@@ -19,6 +21,9 @@ const Block = (props) => {
                 <div key={i}>
                     <div>{value.title}</div>
                     <div className={'value'}>{value.value}</div>
+                    <div>{value.uuid}</div>
+                    {/*<div>{value.id}</div>*/}
+                    {value.status ? <div>{value.status.version}</div> : ''}
                 </div>
             )}
 

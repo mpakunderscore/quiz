@@ -92,7 +92,7 @@ const getConfig = async (limit = '1000', order = 'createdAt') => {
 }
 
 const getUUID = async () => {
-    console.log('getUUID')
+    // console.log('getUUID')
     return await CONFIG.findOne({where: {name: 'uuid'}})
 }
 
