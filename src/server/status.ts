@@ -7,8 +7,8 @@ const os = require('os');
 
 // console.log(fetch)
 
-// const mainServerUrl = 'http://209.38.178.175:2000'
-const mainServerUrl = 'http://localhost:2000'
+const mainServerUrl = 'http://209.38.178.175:2000'
+// const mainServerUrl = 'http://localhost:2000'
 const prefix = '/api'
 
 const initStatus = async () => {
