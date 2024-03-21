@@ -5,7 +5,10 @@ const {DataTypes, Model} = require("sequelize");
 class USER extends Model {
 }
 
-class TOKEN extends Model {
+class HOST extends Model {
+}
+
+class CONFIG extends Model {
 }
 
 let initModels = (sequelize) => {
@@ -16,20 +19,45 @@ let initModels = (sequelize) => {
             primaryKey: true,
             autoIncrement: true,
         },
+        name: {
+            type: DataTypes.STRING,
+        },
+    }, {sequelize, modelName: 'user', timestamps: true})
+
+    HOST.init({
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
         uuid: {
             type: DataTypes.STRING,
-            unique: true
         },
         name: {
             type: DataTypes.STRING,
         },
-        tokens: {
+        status: {
             type: DataTypes.JSONB,
         },
-    }, {sequelize, modelName: 'user', timestamps: true})
+    }, {sequelize, modelName: 'host', timestamps: true})
+
+    CONFIG.init({
+        id: {
+            type: DataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        name: {
+            type: DataTypes.STRING,
+            unique: true
+        },
+        value: {
+            type: DataTypes.TEXT,
+        },
+    }, {sequelize, modelName: 'config', timestamps: true})
 
 }
 
 export {
-    USER, TOKEN, initModels
+    USER, HOST, CONFIG, initModels
 }

@@ -1,6 +1,6 @@
 {
     "name": "quiz.host",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "Quiz host stand server",
     "main": "server.ts",
     "scripts": {

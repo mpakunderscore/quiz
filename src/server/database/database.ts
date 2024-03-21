@@ -1,6 +1,7 @@
 let {Op, Sequelize} = require("sequelize");
 // require("sqlite3");
-let {initModels, USER, TOKEN} = require("./models.ts");
+let {initModels, USER, HOST, CONFIG} = require("./models.ts");
+import {randomUUID} from "node:crypto";
 
 
 // console.log(process.env.DATABASE_URL)
@@ -62,13 +63,18 @@ const getUser = async (uuid) => {
     return user
 }
 
-const getToken = async (tokenName) => {
-    const token = TOKEN.findOne({where: {title: tokenName}})
-    return token
+const updateHost = async (clientHost) => {
+
+    // TODO check here if points change > 1 user go to type ai
+
+    let [host, created] = await HOST.findOrCreate({where: {uuid: clientHost.uuid}})
+    host.status = clientHost
+    await host.save()
+    return host
 }
 
-const getTokens = async (limit = '1000', order = 'createdAt') => {
-    return await TOKEN.findAll({
+const getHosts = async (limit = '1000', order = 'createdAt') => {
+    return await HOST.findAll({
         order: [
             [order, 'DESC'],
         ],
@@ -76,28 +82,25 @@ const getTokens = async (limit = '1000', order = 'createdAt') => {
     })
 }
 
-const setToken = async (aiToken) => {
+const getConfig = async (limit = '1000', order = 'createdAt') => {
+    return await CONFIG.findAll({
+        order: [
+            [order, 'DESC'],
+        ],
+        limit: parseInt(limit),
+    })
 }
 
-// const updatePoints = async (clientUser) => {
-//     let user = await USER.findOne({where: {uuid: clientUser.uuid}})
-//     const updateApproved = true
-//     if (user && updateApproved) {
-//         user.stats.points = clientUser.stats.points + 1
-//         await user.save()
-//     }
-// }
-//
-const updateUser = async (clientUser) => {
-
-    // TODO check here if points change > 1 user go to type ai
-
-    let [user, created] = await USER.findOrCreate({where: {uuid: clientUser.uuid}, clientUser})
-    return user
+const getUUID = async () => {
+    console.log('getUUID')
+    return await CONFIG.findOne({where: {name: 'uuid'}})
 }
 
+const newUUID = async () => {
+    return await CONFIG.create({name: 'uuid', value: randomUUID() + ''})
+}
 
 
 export {
-    initDatabase, getUser, getUsers, getToken, getTokens, setToken
+    initDatabase, updateHost, getHosts, getConfig, getUUID, newUUID
 }

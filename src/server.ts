@@ -27,7 +27,8 @@ require('dotenv').config()
 
 initDatabase()
 initAPI(app)
-initStatus()
+setTimeout(() => initStatus(), 10000)
+
 
 app.use('/', express.static('./dist'))
 
