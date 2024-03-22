@@ -20,10 +20,7 @@ const Block = (props) => {
             {props.values.map((value, i) =>
                 <div key={i}>
                     <div>{value.title}</div>
-                    <div className={'value'}>{value.value}</div>
-                    <div>{value.uuid}</div>
-                    {/*<div>{value.id}</div>*/}
-                    {value.status ? <div>{value.status.version}</div> : ''}
+                    <div>{value.value}</div>
                 </div>
             )}
 

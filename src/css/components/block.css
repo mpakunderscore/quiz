@@ -1,6 +1,7 @@
 .block > div {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 
     background: rgba(224, 255, 255, 0.1);
     padding: 16px 20px;
@@ -11,6 +12,10 @@
     /*box-shadow: 0 3px 10px rgb(255 255 255 / 0.2);*/
 
     cursor: pointer;
+}
+
+.block > div > div {
+    /*padding: 0 10px;*/
 }
 
 .block > div.title {

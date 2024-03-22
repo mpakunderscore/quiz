@@ -171,8 +171,10 @@ const Admin: FC<{}> = ({}) => {
     const getHosts = async () => {
         const response = await fetch("/api/hosts");
         const hosts = await response.json();
-        setHosts(hosts)
-        console.log(hosts)
+        console.log()
+        const hostsValues = hosts.map((host) => ({title: host.uuid, value: host.status.version}))
+        setHosts(hostsValues)
+        // console.log(hosts)
     }
 
     const [hosts, setHosts] = useState([])
