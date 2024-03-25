@@ -19,11 +19,20 @@
 }
 
 .block > div.title {
-    background: transparent;
+    background: rgba(224, 255, 255, 0.3);
+
     justify-content: right;
     color: white;
     font-size: 20px;
     font-weight: 200;
+}
+
+.block > div.title.active {
+    background: transparent;
+}
+
+.block > div.title.active:hover {
+    background: rgba(224, 255, 255, 0.1);
 }
 
 .block > div:hover {

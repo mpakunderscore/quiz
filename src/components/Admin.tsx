@@ -24,7 +24,7 @@ const Admin: FC<{}> = ({}) => {
     const lastSyncDate = new Date().toLocaleString()
     const unsyncedGamesCount = 0
 
-    const version = VERSION + ' ' + GIT
+    const version = VERSION
     const status = 'ONLINE'
 
     const availableGamesCount = 10
@@ -40,85 +40,9 @@ const Admin: FC<{}> = ({}) => {
 
     const hostObject = {status}
 
-    const quizShow = {
-        "name": "Ultimate Brain Challenge",
-        "host": "Alex Smart",
-        "location": "Downtown Convention Center",
-        "date": "2024-03-20",
-        "time": "19:00",
-        "categories": [
-            {
-                "name": "General Knowledge",
-                "questions": [
-                    {
-                        "level": "easy",
-                        "question": "What is the capital of France?",
-                        "options": ["Paris", "London", "Berlin", "Madrid"],
-                        "answer": "Paris"
-                    },
-                    {
-                        "level": "medium",
-                        "question": "In what year did the Titanic sink?",
-                        "options": ["1912", "1905", "1898", "1923"],
-                        "answer": "1912"
-                    }
-                ]
-            },
-            {
-                "name": "Science and Nature",
-                "questions": [
-                    {
-                        "level": "easy",
-                        "question": "What is the chemical symbol for gold?",
-                        "options": ["Au", "Ag", "Ge", "Hg"],
-                        "answer": "Au"
-                    },
-                    {
-                        "level": "medium",
-                        "question": "What planet is known as the Red Planet?",
-                        "options": ["Mars", "Jupiter", "Saturn", "Venus"],
-                        "answer": "Mars"
-                    }
-                ]
-            },
-            {
-                "name": "Pop Culture",
-                "questions": [
-                    {
-                        "level": "easy",
-                        "question": "Who is known as the 'King of Pop'?",
-                        "options": ["Elvis Presley", "Michael Jackson", "Justin Bieber", "Prince"],
-                        "answer": "Michael Jackson"
-                    },
-                    {
-                        "level": "medium",
-                        "question": "Which movie won the Oscar for Best Picture in 2020?",
-                        "options": ["Parasite", "Joker", "1917", "Once Upon a Time in Hollywood"],
-                        "answer": "Parasite"
-                    }
-                ]
-            }
-        ],
-        "rules": {
-            "timeLimitPerQuestion": "30 seconds",
-            "pointsPerQuestion": {
-                "easy": 10,
-                "medium": 20,
-                "hard": 30
-            },
-            "penaltyForWrongAnswer": "No points deducted",
-            "finalRound": {
-                "questions": 5,
-                "timeLimitPerQuestion": "45 seconds",
-                "pointsPerQuestion": 50,
-                "mustAnswerAllQuestions": true
-            }
-        }
-    }
-
     const textAboutGame = ''
 
-    const hostName = quizShow.host
+    const hostName = 'Host NAME'
 
     const difficulty = 'HARD'
 
@@ -184,6 +108,11 @@ const Admin: FC<{}> = ({}) => {
         getHosts()
     }, []);
 
+    const [settings, setSettings] = useState([
+        {title: 'VERSION', value: VERSION},
+        {title: 'GIT', value: GIT}
+    ])
+
     return (
         <div className={'main'}>
 
@@ -205,11 +134,13 @@ const Admin: FC<{}> = ({}) => {
                 }
             ]}/>
 
-            <Block block={{title: 'HOSTS'}} values={hosts}/>
+            <Block block={{title: 'HOSTS'}} values={hosts} setHost={setHost}/>
 
             {host ? <Block block={{title: 'HOST DATA'}} values={hostData}/> : null}
 
-            <Block block={{title: 'SETTINGS'}} values={[{title: 'VERSION', value: version}]}/>
+            <Block block={{title: 'SCENARIOS'}} values={settings}/>
+
+            <Block block={{title: 'SETTINGS'}} values={settings}/>
 
             <div className={'copyright'}>QUIZ CORPORATION</div>
         </div>)

@@ -12,13 +12,19 @@ const Block = (props) => {
 
     // console.log(props.values)
 
+    const [isOpen, setOpen] = useState(false)
+
+    const openValue = () => {
+        props.setHost(true)
+    }
+
     return (
         <div className={'block'}>
 
-            <div className={'title'}>{props.block.title}</div>
+            <div className={'title' + (isOpen ? ' active' : '')} onClick={() => setOpen(!isOpen)}>{props.block.title}</div>
 
-            {props.values.map((value, i) =>
-                <div key={i}>
+            {isOpen && props.values.map((value, i) =>
+                <div key={i} onClick={() => openValue()}>
                     <div>{value.title}</div>
                     <div>{value.value}</div>
                 </div>
