@@ -15,7 +15,7 @@ const Block = (props) => {
     const [isOpen, setOpen] = useState(false)
 
     const openValue = () => {
-        props.setHost(true)
+        // props.setHost(true)
     }
 
     return (

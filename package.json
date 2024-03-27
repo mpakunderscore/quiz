@@ -5,7 +5,6 @@
     "main": "server.ts",
     "scripts": {
         "start": "node dist/server.js",
-        "start-ts": "node src/server.ts",
         "watch": "webpack --watch --config webpack.config.js",
         "watch-server": "webpack --watch --config webpack.server.config.js",
         "build": "NODE_ENV=production webpack --stats-error-details",

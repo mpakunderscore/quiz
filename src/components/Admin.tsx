@@ -113,6 +113,11 @@ const Admin: FC<{}> = ({}) => {
         {title: 'GIT', value: GIT}
     ])
 
+    const [scenarios, setScenarios] = useState([
+        {title: 'First', value: '1'},
+        {title: 'Second', value: '2'}
+    ])
+
     return (
         <div className={'main'}>
 
@@ -138,7 +143,7 @@ const Admin: FC<{}> = ({}) => {
 
             {host ? <Block block={{title: 'HOST DATA'}} values={hostData}/> : null}
 
-            <Block block={{title: 'SCENARIOS'}} values={settings}/>
+            <Block block={{title: 'SCENARIOS'}} values={scenarios}/>
 
             <Block block={{title: 'SETTINGS'}} values={settings}/>
 
